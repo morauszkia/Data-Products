@@ -60,21 +60,16 @@ It simulates a specified number of simulations of a specified number of coin tos
 ```r
 toss <- sample(c("h", "t"), 20, replace=TRUE, prob = c(0.5, 0.5))
 seq <- rle(toss); maxseq <- max(rle(toss)$lengths)
-paste("The sequence was:", toss); paste("The longest run was: ", maxseq)
+print(toss); print(maxseq)
 ```
 
 ```
-##  [1] "The sequence was: t" "The sequence was: h" "The sequence was: h"
-##  [4] "The sequence was: h" "The sequence was: h" "The sequence was: h"
-##  [7] "The sequence was: t" "The sequence was: t" "The sequence was: h"
-## [10] "The sequence was: t" "The sequence was: t" "The sequence was: h"
-## [13] "The sequence was: t" "The sequence was: t" "The sequence was: h"
-## [16] "The sequence was: t" "The sequence was: h" "The sequence was: t"
-## [19] "The sequence was: h" "The sequence was: t"
+##  [1] "h" "t" "h" "h" "h" "h" "t" "h" "t" "h" "t" "t" "h" "h" "h" "h" "h"
+## [18] "t" "h" "t"
 ```
 
 ```
-## [1] "The longest run was:  5"
+## [1] 5
 ```
 
 Thank you for your kind attention!
