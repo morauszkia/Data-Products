@@ -60,20 +60,21 @@ It simulates a specified number of simulations of a specified number of coin tos
 ```r
 toss <- sample(c("h", "t"), 20, replace=TRUE, prob = c(0.5, 0.5))
 seq <- rle(toss); maxseq <- max(rle(toss)$lengths)
-print("The sequence was:", toss); print("The longest run was: ", maxseq)
+paste("The sequence was:", toss); paste("The longest run was: ", maxseq)
 ```
 
 ```
-## Warning in print.default("The sequence was:", toss): NAs introduced by
-## coercion
+##  [1] "The sequence was: t" "The sequence was: h" "The sequence was: h"
+##  [4] "The sequence was: h" "The sequence was: h" "The sequence was: h"
+##  [7] "The sequence was: t" "The sequence was: t" "The sequence was: h"
+## [10] "The sequence was: t" "The sequence was: t" "The sequence was: h"
+## [13] "The sequence was: t" "The sequence was: t" "The sequence was: h"
+## [16] "The sequence was: t" "The sequence was: h" "The sequence was: t"
+## [19] "The sequence was: h" "The sequence was: t"
 ```
 
 ```
-## Error in print.default("The sequence was:", toss): invalid 'digits' argument
-```
-
-```
-## [1] "The longest run was: "
+## [1] "The longest run was:  5"
 ```
 
 Thank you for your kind attention!

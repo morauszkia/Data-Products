@@ -119,17 +119,19 @@ It simulates a specified number of simulations of a specified number of coin tos
 
 <pre><code class="r">toss &lt;- sample(c(&quot;h&quot;, &quot;t&quot;), 20, replace=TRUE, prob = c(0.5, 0.5))
 seq &lt;- rle(toss); maxseq &lt;- max(rle(toss)$lengths)
-print(&quot;The sequence was:&quot;, toss); print(&quot;The longest run was: &quot;, maxseq)
+paste(&quot;The sequence was:&quot;, toss); paste(&quot;The longest run was: &quot;, maxseq)
 </code></pre>
 
-<pre><code>## Warning in print.default(&quot;The sequence was:&quot;, toss): NAs introduced by
-## coercion
+<pre><code>##  [1] &quot;The sequence was: t&quot; &quot;The sequence was: h&quot; &quot;The sequence was: h&quot;
+##  [4] &quot;The sequence was: h&quot; &quot;The sequence was: h&quot; &quot;The sequence was: h&quot;
+##  [7] &quot;The sequence was: t&quot; &quot;The sequence was: t&quot; &quot;The sequence was: h&quot;
+## [10] &quot;The sequence was: t&quot; &quot;The sequence was: t&quot; &quot;The sequence was: h&quot;
+## [13] &quot;The sequence was: t&quot; &quot;The sequence was: t&quot; &quot;The sequence was: h&quot;
+## [16] &quot;The sequence was: t&quot; &quot;The sequence was: h&quot; &quot;The sequence was: t&quot;
+## [19] &quot;The sequence was: h&quot; &quot;The sequence was: t&quot;
 </code></pre>
 
-<pre><code>## Error in print.default(&quot;The sequence was:&quot;, toss): invalid &#39;digits&#39; argument
-</code></pre>
-
-<pre><code>## [1] &quot;The longest run was: &quot;
+<pre><code>## [1] &quot;The longest run was:  5&quot;
 </code></pre>
 
 <p>Thank you for your kind attention!</p>
