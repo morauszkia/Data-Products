@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coin Toss Experiment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Coin Toss Experiment">
+  <meta name="author" content="Andras Morauszki">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Coin Toss Experiment</h1>
+    <h2>Developing Data Products Presentation</h2>
+    <p>Andras Morauszki<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>An experiment</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A mathematician called P. Revesz once performed a classroom experiment, dividing the classroom into two groups.<br>
+The first group had to toss a coin 200 times and record the sequence of heads and tails.<br>
+The second had to write down a sequence of heads and tails that they believe is reasonable.<br>
+Revesz claimed, that the students could be classified back to their groups using a simple criterion.  </p>
+
+<p>Can you guess, what this criterion was?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>An experiment II.</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>It was the length of the longest run of consecutive heads or consecutive tails.</p>
+
+<p>What do you think is the expected length of the longest run for 200 coin tosses?</p>
+
+<ol>
+<li>cca. 3 </li>
+<li>cca. 5</li>
+<li>cca. 6</li>
+<li><em>cca. 8 consecutive heads/tails</em></li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>It&#39;s more than most people would think.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Are you sceptical? Try it yourself!</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>If you don&#39;t want to toss the coins yourself</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>And if you wouldn&#39;t want to toss the coin yourself and haven&#39;t got a classroom to do it for you, the link below will take you to an app, which runs the simulation for you.<br>
+(NB: The other sequence still has to be written by people)</p>
+
+<p>To access the app, <a href="http://morauszkia.shinyapps.io/CPMyApp">CLICK HERE!</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How does it work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app was created using R package &#39;shiny&#39;.<br>
+It simulates a specified number of simulations of a specified number of coin tosses and uses the &#39;rle&#39; function to calculate the lengths of runs of consecutive heads/tails. You can see an example of 20 coin tosses below.</p>
+
+<pre><code class="r">toss &lt;- sample(c(&quot;h&quot;, &quot;t&quot;), 20, replace=TRUE, prob = c(0.5, 0.5))
+seq &lt;- rle(toss); maxseq &lt;- max(rle(toss)$lengths)
+print(&quot;The sequence was:&quot;, toss); print(&quot;The longest run was: &quot;, maxseq)
+</code></pre>
+
+<pre><code>## Warning in print.default(&quot;The sequence was:&quot;, toss): NAs introduced by
+## coercion
+</code></pre>
+
+<pre><code>## Error in print.default(&quot;The sequence was:&quot;, toss): invalid &#39;digits&#39; argument
+</code></pre>
+
+<pre><code>## [1] &quot;The longest run was: &quot;
+</code></pre>
+
+<p>Thank you for your kind attention!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='An experiment'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='An experiment II.'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='If you don&#39;t want to toss the coins yourself'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How does it work?'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
